@@ -1,8 +1,14 @@
-const myAge = 69;
-let earlyYears = 2;
-earlyYears *= 10.5;
-let laterYears = myAge - 2;
-laterYears *= 4;
-const myAgeInDogYears = earlyYears + laterYears;
-const myName = 'George'.toLowerCase();
-console.log(`My name is ${myName}, I am ${myAge} years old in human years which is ${myAgeInDogYears} years old in dog years`);
+// Human to dog years calculation:
+// First 2 human years are equivalent to 10.5 dog years per human year.
+// After which it is equivalent to 4 dog years per human year.
+
+function convertToDogYears(humanYears = 0)
+{
+    if (humanYears <= 2)
+    {
+        return humanYears * 10.5;
+    }
+    return (humanYears - 2) * 4 + 21;
+}
+
+console.log(convertToDogYears(101));
